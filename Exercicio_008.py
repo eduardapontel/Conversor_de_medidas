@@ -3,7 +3,16 @@ print(bordas)
 print('{:^35}'.format('CONVERSOR DE MEDIDAS'))
 print(bordas)
 print()
-m = float(input('Digite o valor em metros: '))
+
+m = ''
+
+while type(m) != float:
+    try:
+        m = float(input('Digite o valor em metros: '))
+    except:
+        print('Por favor digite um valor válido!')
+
+
 print(bordas)
 print('km -> Para converter para quilômetro')
 print('hm -> Para converter para hectômetro')
@@ -17,10 +26,10 @@ while True:
     convert = input('Digite a opção desejada: ').strip().lower()
     match convert:
         case 'km':
-            print(f'\nO valor em metros corresponde a {m / 1000}km')
+            print(f'\nO valor em metros corresponde a {m/1000}km')
             break
         case 'hm':
-            print(f'\nO valor em metros corresponde a {m / 100}hm')
+            print(f'\nO valor em metros corresponde a {m/100}hm')
             break
         case 'dam':
             print(f'\nO valor em metros corresponde a {m/10}dam')
